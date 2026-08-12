@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineStream - Discover popular movies, trending shows and cinematic experiences.">
+    <title>CineStream | Discover Your Next Movie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="navbar">
+            <a class="brand" href="#">
+                <span class="brand-mark">▶</span>
+                <span>Cine<span>Stream</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a class="active" href="#home">Home</a>
+                <a href="#movies">Movies</a>
+                <a href="#trending">Trending</a>
+                <a href="#my-list">My List</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+                <button class="profile-btn" aria-label="Profile">CS</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <div class="eyebrow"><span></span> Featured this week</div>
+                    <h1>Every story<br>deserves a <em>screen.</em></h1>
+                    <p class="hero-text">Explore a universe of unforgettable characters, epic adventures and stories that stay with you.</p>
+                    <div class="hero-buttons">
+                        <button class="primary-btn" id="heroPlay">▶ Watch trailer</button>
+                        <button class="secondary-btn" id="heroInfo">＋ Add to list</button>
+                    </div>
+                    <div class="hero-meta">
+                        <span>2024</span><i></i><span>Action, Sci-Fi</span><i></i><span class="rating">★ 8.7</span>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <div class="hero-glow"></div>
+                    <div class="floating-card card-one">★ <strong>8.7</strong><small>IMDb rating</small></div>
+                    <div class="floating-card card-two">NEW <small>Now streaming</small></div>
+                    <div class="poster hero-poster">
+                        <div class="poster-overlay"></div>
+                        <div class="poster-title">DUNE<br><small>PART TWO</small></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="movies">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Curated for you</p>
+                        <h2>Popular <span>movies</span></h2>
+                    </div>
+                    <div class="search-wrap">
+                        <span>⌕</span>
+                        <input id="searchInput" type="search" placeholder="Search movies...">
+                    </div>
+                </div>
+
+                <div class="filter-row" id="filters">
+                    <button class="filter active" data-genre="All">All movies</button>
+                    <button class="filter" data-genre="Action">Action</button>
+                    <button class="filter" data-genre="Drama">Drama</button>
+                    <button class="filter" data-genre="Sci-Fi">Sci-Fi</button>
+                    <button class="filter" data-genre="Comedy">Comedy</button>
+                    <button class="filter" data-genre="Thriller">Thriller</button>
+                </div>
+
+                <div class="movie-grid" id="movieGrid"></div>
+                <div class="empty-state" id="emptyState">No movies found. Try another search.</div>
+            </section>
+
+            <section class="newsletter">
+                <div>
+                    <p class="section-kicker">Stay in the loop</p>
+                    <h2>Never miss a <span>great story.</span></h2>
+                    <p>Weekly recommendations, new releases and cinematic inspiration.</p>
+                </div>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Your email address" required>
+                    <button class="primary-btn" type="submit">Subscribe →</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <a class="brand" href="#"><span class="brand-mark">▶</span><span>Cine<span>Stream</span></span></a>
+            <p>© 2024 CineStream. Made for movie lovers.</p>
+            <div class="socials"><span>𝕏</span><span>◎</span><span>◉</span></div>
+        </footer>
+    </div>
+
+    <div class="modal" id="movieModal">
+        <div class="modal-box">
+            <button class="close-btn" id="closeModal">×</button>
+            <div class="modal-poster" id="modalPoster"></div>
+            <div class="modal-info">
+                <p class="section-kicker">Movie details</p>
+                <h2 id="modalTitle"></h2>
+                <div class="hero-meta" id="modalMeta"></div>
+                <p id="modalDescription"></p>
+                <button class="primary-btn">▶ Start watching</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
